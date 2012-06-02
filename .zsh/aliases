@@ -1,0 +1,15 @@
+alias rst='touch tmp/restart.txt'
+
+# ls
+alias ls="ls -F"
+alias l="ls -lAh"
+alias ll="ls -l"
+alias la='ls -A'
+
+alias bundle="nocorrect bundle "
+alias tmux="nocorrect tmux "
+alias t="nocorrect tmux -u"
+
+alias php-server=php-fastcgi
+
+alias reload!='. ~/.zshrc'
