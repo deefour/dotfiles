@@ -4,7 +4,9 @@ alias rst='touch tmp/restart.txt'
 alias ls="ls -F"
 alias l="ls -lAh"
 alias ll="ls -l"
-alias la='ls -A'
+alias la="ls -A"
+
+alias take="mcd"
 
 alias bundle="nocorrect bundle "
 alias tmux="nocorrect tmux "
