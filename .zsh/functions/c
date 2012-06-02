@@ -1,1 +1,15 @@
-cd ~/Sites/$1;
+c() {
+  matched=false
+  for dir in ~/{Sites,Work,Repos,}; do
+    if [ -d "${dir}/${1}" ]; then
+      cd "${dir}/${1}" 
+      matched=true
+      break
+    fi
+  done
+
+  if ! $matched; then
+    echo "cd: no such file or directory: ${1}"; 
+#    exit 1;
+  fi
+}
