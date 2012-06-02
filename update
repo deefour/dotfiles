@@ -1,10 +1,6 @@
-#!/user/bin/env bash
+#!/usr/bin/env bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-cd $DIR
-
-git pull git://github.com/deefour/dotfiles.git
-
-$HOME/dotfiles/install
+cd $DIR && git pull && $HOME/dotfiles/install
 

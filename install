@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CALLER=$(ps ax | grep "^ *$PPID" | awk '{print $NF}')
 
 symlinks=`find $DIR -type f -maxdepth 1 -name \.\*`
 
@@ -8,5 +9,11 @@ for file in $symlinks; do
   [ ! -h "${HOME}/$(basename $file)" ] && ln -s $file "${HOME}/$(basename $file)"
 done
 
-echo "Deefour's Dotfiles have been installed/updated."
+if [ -z "$(echo $CALLER | awk '/update/')" ]; then
+  git branch --set-upstream master origin/master
+  echo "Deefour's Dotfiles have been installed."
+else
+  echo "Deefour's Dotfiles have been updated."
+fi
+
 
