@@ -4,3 +4,5 @@
 
 # use .localrc for settings specific to one system
 [[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
+
+eval "$(rbenv init -)"

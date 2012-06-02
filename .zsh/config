@@ -17,14 +17,6 @@ PAGER=less
 EDITOR=vim
 REPORTTIME=10 # print elapsed time when more than 10 seconds
 
-alias s1='ssh planetwheel@67.19.219.114 -p33988'
-alias s2='ssh root@208.43.2.59'
-alias s3='ssh root@74.52.32.242'
-alias s4='ssh root@208.43.3.200'
-alias s6='ssh root@74.86.126.123'
-alias s7='ssh root@208.43.2.60'
-alias s8='ssh root@74.86.126.122'
-
 source $ZSH/oh-my-zsh.sh
 
 bindkey '^[^[[D' backward-word
@@ -34,3 +26,5 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
+
+

@@ -36,3 +36,4 @@
     tool = vimdiff
 [core]
 	excludesfile = /Users/deefour/.gitignore_global
+	editor = vim
