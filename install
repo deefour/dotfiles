@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+symlinks=`find $DIR -type f -maxdepth 1 -name \.\*`
+
+for file in $symlinks; do
+  [ ! -h "${HOME}/$(basename $file)" ] && ln -s $file "${HOME}/$(basename $file)"
+done
+
+echo "Deefour's Dotfiles have been installed/updated."
+
