@@ -16,4 +16,5 @@ alias php-server=php-fastcgi
 
 alias reload!=". ~/.zshrc"
 
-alias e="mvim ."
+alias e="${D4_EDITOR} ."
+
