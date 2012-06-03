@@ -1,4 +1,9 @@
 c() {
+  if [ -z "$1" ]; then
+    cd ~
+    return
+  fi
+
   matched=false
   for dir in ~/{Sites,Work,Repos,}; do
     if [ -d "${dir}/${1}" ]; then
