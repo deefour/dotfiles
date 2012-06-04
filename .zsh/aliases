@@ -16,5 +16,12 @@ alias php-server=php-fastcgi
 
 alias reload!=". ~/.zshrc"
 
-alias e="${D4_EDITOR} ."
+# Flush DNS (OS X)
+alias flushdns="dscacheutil -flushcache"
+
+# Because I'm an idiot and sometimes type it backwards
+alias dnsflush="flushdns"
+
+# Fix and shrink png files. Pass infile and outfile.
+alias pngfix="pngcrush -rem gAMA -rem cHRM -rem iCCP -rem sRGB $1 $2"
 
