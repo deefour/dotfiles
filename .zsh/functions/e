@@ -1,0 +1,14 @@
+e () {
+  matched=false
+  for dir in ~/{Sites/,Work/,Repos/,}; do
+    if [ -d "${dir}${1}" ]; then
+      $($D4_EDITOR ${dir}${1})
+      matched=true
+      break
+    fi
+  done
+
+  if ! $matched; then
+    $(${D4_EDITOR} ${1})
+  fi
+}
