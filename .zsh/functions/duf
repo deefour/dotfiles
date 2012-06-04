@@ -1,3 +1,4 @@
+# vim set ft:bash
 duf () {
   du -sk "$@" | sort -n | while read size fname;
 

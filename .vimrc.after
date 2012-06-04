@@ -58,3 +58,6 @@ imap <Left> <Nop>
 imap <Right> <Nop>
 imap <Up> <Nop>
 imap <Down> <Nop>
+
+
+autocmd FileType php,ruby,python,scss,html,eruby,yaml,bash,css,javascript autocmd BufWritePre *.py :%s/\s\+$//e

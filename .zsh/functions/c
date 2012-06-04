@@ -1,3 +1,4 @@
+# vim set ft:bash
 c() {
   if [ -z "$1" ]; then
     cd ~
