@@ -13,6 +13,7 @@ eval RESET='$reset_color'
 . ~/dotfiles/.zsh/completion
 . ~/dotfiles/.zsh/config
 
+
 # use .localrc for settings specific to one system
 [[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
 
