@@ -1,3 +1,4 @@
 set transparency=6
-color solarized
+set background=dark
 set guioptions=egmt
+colorscheme Tomorrow-Night-Eighties
