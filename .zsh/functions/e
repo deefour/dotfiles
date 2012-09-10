@@ -1,15 +1,15 @@
 e () {
   if [ -z "$1" ] || [[ "." == "$1" ]]; then
-   $($D4_EDITOR .)
+   ($D4_EDITOR .)
    return
   fi
 
   for dir in ~/{Sites/,Work/,Repos/,}; do
     if [ -d "${dir}${1}" ]; then
-      $($D4_EDITOR ${dir}${1})
+      ($D4_EDITOR ${dir}${1})
       return
     fi
   done
 
-  $(${D4_EDITOR} ${1})
+  (${D4_EDITOR} ${1} &!)
 }
