@@ -1,0 +1,11 @@
+symfony-setup-tests () {
+   if [ ! -f symfony ]; then
+     echo "${BOLD_RED}No symfony application present to run against${reset_color}"
+     return
+   fi
+
+   ./symfony doctrine:drop-db --env=test --no-confirmation && \
+   ./symfony doctrine:create-db --env=test && \
+   ./symfony doctrine:migrate --env=test && \
+   ./symfony doctrine:data-load --env=test data/fixtures/test
+ }
