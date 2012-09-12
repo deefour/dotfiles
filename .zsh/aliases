@@ -11,6 +11,7 @@ alias take="mcd"
 alias bundle="nocorrect bundle "
 alias tmux="nocorrect tmux "
 alias t="nocorrect tmux -u"
+alias fix="nocorrect fix "
 
 alias php-server=php-fastcgi
 
@@ -40,3 +41,5 @@ alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && kil
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; npm update npm -g; npm update -g'
+
+alias lssh='cat ~/.ssh/config | grep "Host " | cut -f2 -d\ '
