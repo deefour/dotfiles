@@ -1,7 +1,7 @@
 fpath=($fpath $HOME/dotfiles/.zsh/functions)
 typeset -U fpath
 
-export PATH=${HOME}/bin:/usr/local/share/python:/usr/local/sbin:/usr/local/bin:/usr/local/php54/bin:${PATH}
+export PATH=${HOME}/bin:/usr/local/share/python:/usr/local/sbin:/usr/local/bin:/usr/local/php54/bin:/usr/local/share/npm/bin:${PATH}
 export NODE_PATH=/usr/local/lib/node_modules:${NODE_PATH}
 
 export JAVA_HOME="$(/usr/libexec/java_home)"
