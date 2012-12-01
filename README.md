@@ -1,12 +1,23 @@
 # Deefour's Dotfiles
 
-## Prerequisites
+## Dependencies
 
 I use [janus](https://github.com/carlhuda/janus),
 [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh),
 [rbenv](https://github.com/sstephenson/rbenv), and
 [macvim](http://code.google.com/p/macvim/). The dotfiles are setup with
 this in mind.
+
+## Optional
+
+I maintain a CLI bookmarking & shortcuts utility called **SpeedDial**.
+
+ - **NPM Registry Package:** https://npmjs.org/package/speed-dial
+ - **Github Repository:** https://github.com/deefour/speed-dial
+
+This isn't a mandatory dependency for these dotfiles, but is recommended. Without SpeedDial
+
+ 1. The `se` function won't work if SpeedDial isn't installed
 
 ## Installation
 
