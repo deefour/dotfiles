@@ -27,7 +27,8 @@ alias dnsflush="flushdns"
 alias pngfix="pngcrush -rem gAMA -rem cHRM -rem iCCP -rem sRGB $1 $2"
 
 # git
-alias gst="git st"
+alias gst="git st "
+alias gp="git aa -p "
 
 # URL-encode strings
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
@@ -43,3 +44,5 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 alias update-system='sudo softwareupdate -i -a; brew update; brew upgrade; npm update npm -g; npm update -g'
 
 alias lssh='cat ~/.ssh/config | grep "Host " | cut -f2 -d\ '
+
+alias guard="guard --no-bundler-warning"
