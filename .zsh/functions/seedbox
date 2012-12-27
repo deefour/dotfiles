@@ -1,5 +1,18 @@
+# In your .zshenv.local export the following variables to work
+# with this seedbox function
+#
+#  - D4_SEEDBOX_ID: your seedbox's AWS EC2 instance ID
+#  - D4_SEEDBOX_IP: a free elastic IP to associate with the instance
+#
+# This function assumes you have the Amazon EC2 API Tools installed
+# and available on $PATH.
 seedbox () {
   mode="$1"
+
+  command -v ecd2-start-instances >/dev/null 2>&1 || {
+    echo >&2 "The seedbox command require the Amazon EC2 API Tools be installed and available in \$PATH."
+    return
+  }
 
   if [[ "$mode" == "up" ]]
   then
