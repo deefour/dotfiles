@@ -9,7 +9,7 @@
 seedbox () {
   mode="$1"
 
-  command -v ecd2-start-instances >/dev/null 2>&1 || {
+  command -v ec2-start-instances >/dev/null 2>&1 || {
     echo >&2 "The seedbox command require the Amazon EC2 API Tools be installed and available in \$PATH."
     return
   }
