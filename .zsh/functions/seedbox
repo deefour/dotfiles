@@ -1,0 +1,29 @@
+seedbox () {
+  mode="$1"
+
+  if [[ "$mode" == "up" ]]
+  then
+    echo "Starting up the seedbox..."
+
+    ec2-start-instances $D4_SEEDBOX_ID > /dev/null &&
+    ec2-associate-address $D4_SEEDBOX_IP -i $D4_SEEDBOX_ID > /dev/null &&
+
+    echo "The seedbox will be ready in a minute or two."
+  elif [[ "$mode" == "down" ]]
+  then
+    echo "Stopping the seedbox..."
+
+    ec2-stop-instances $D4_SEEDBOX_ID > /dev/null &&
+
+    echo "The seedbox has been stopped"
+  elif [[ -n "$mode" ]]
+  then
+    echo "Invalid argument. Only up or down are allowed"
+    return
+  else
+
+    stat=`ec2-describe-instance-status $D4_SEEDBOX_ID | cut -f8`
+
+    echo "The seedbox is currently ${stat:=stopped}"
+  fi
+}
