@@ -44,6 +44,8 @@ nmap _= :call Preserve("normal gg=G")<CR>
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
   vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a{ :Tabularize /{<CR>
+  vmap <Leader>a{ :Tabularize /{<CR>
   nmap <Leader>a: :Tabularize /:\zs<CR>
   vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
@@ -113,7 +115,7 @@ imap <Up> <Nop>
 imap <Down> <Nop>
 
 
-autocmd FileType php,ruby,python,scss,html,eruby,yaml,bash,css,javascript autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 
 
