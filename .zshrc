@@ -19,12 +19,4 @@ eval RESET='$reset_color'
 
 eval "$(rbenv init -)"
 
-# {{{
-# Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
 [[ -s /Users/deefour/.nvm/nvm.sh ]] && . /Users/deefour/.nvm/nvm.sh # This loads NVM
