@@ -16,7 +16,7 @@ seedbox () {
 
   if [[ "$mode" == "up" ]]
   then
-    echo "Starting up the seedbox..."
+    echo -e "\e[34;1mStarting up the seedbox...\e[0m"
 
     ec2-start-instances $D4_SEEDBOX_ID > /dev/null &&
     ec2-associate-address $D4_SEEDBOX_IP -i $D4_SEEDBOX_ID > /dev/null &&
@@ -24,19 +24,23 @@ seedbox () {
     echo "The seedbox will be ready in a minute or two."
   elif [[ "$mode" == "down" ]]
   then
-    echo "Stopping the seedbox..."
+    echo -e "\e[34;1mStopping the seedbox...\e[0m"
 
     ec2-stop-instances $D4_SEEDBOX_ID > /dev/null &&
 
-    echo "The seedbox has been stopped"
+    echo "The seedbox has been \e[31;1mstopped\e[0m"
+  elif [[ "$mode" == "down" ]]
+  then
+    echo -e "Pulling files from \e[34;1m${D4_SEEDBOX_SOURCE}\e[0m on the seedbox down to \e[32;1m${D4_SEEDBOX_DESTINATION}\e[0m..."
+    rsync -uvzr --progress --remove-source-files -e ssh "${D4_SEEDBOX_SSH}:${D4_SEEDBOX_SOURCE} ${D4_SEEDBOX_DESTINATION}"
   elif [[ -n "$mode" ]]
   then
-    echo "Invalid argument. Only up or down are allowed"
+    echo -e "Invalid argument. Only \e[32;1mup\e[0m, \e[32;1mdown\e[0m, and \e[32;1mpull\e[0m are allowed"
     return
   else
 
     stat=`ec2-describe-instance-status $D4_SEEDBOX_ID | cut -f8`
 
-    echo "The seedbox is currently ${stat:=stopped}"
+    echo -e "The seedbox is currently \e[34;1m${stat:=stopped}\e[0m"
   fi
 }
