@@ -12,6 +12,7 @@ alias bundle="nocorrect bundle "
 alias tmux="nocorrect tmux "
 alias t="nocorrect tmux -u"
 alias fix="nocorrect fix "
+alias heroku="nocorrect heroku "
 
 alias php-server=php-fastcgi
 
