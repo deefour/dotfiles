@@ -1,4 +1,0 @@
-# vim set ft:bash
-ce () {
-  c "$@" && $D4_EDITOR .
-}

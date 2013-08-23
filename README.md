@@ -8,23 +8,12 @@ I use [janus](https://github.com/carlhuda/janus),
 [macvim](http://code.google.com/p/macvim/). The dotfiles are setup with
 this in mind.
 
-## Optional
-
-I maintain a CLI bookmarking & shortcuts utility called **SpeedDial**.
-
- - **NPM Registry Package:** https://npmjs.org/package/speed-dial
- - **Github Repository:** https://github.com/deefour/speed-dial
-
-This isn't a mandatory dependency for these dotfiles, but is recommended. Without SpeedDial
-
- 1. The `se` function won't work if SpeedDial isn't installed
-
 ## Installation
 
  1. Install the applications mentioned in the **Prerequisites**.
  2. Run `cd ~ && git clone git://github.com/deefour/dotfiles.git && ~/dotfiles/install`
 
-## Update 
+## Update
 
  1. Run `~/dotfiles/update`
 

@@ -1,0 +1,3 @@
+function marks {
+  (t="$(printf "\t")"; cd $MARKPATH && stat -f"%N$t%SY" * | column -ts"$t")
+}

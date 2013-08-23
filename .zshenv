@@ -1,7 +1,7 @@
 fpath=($fpath $HOME/dotfiles/.zsh/functions)
 typeset -U fpath
 
-export PATH=${HOME}/bin:/usr/local/share/python:/usr/local/sbin:/usr/local/bin:/usr/local/php54/bin:/usr/local/share/npm/bin:${PATH}
+export PATH=${HOME}/bin:/usr/local/share/python:${HOME}/.cabal/bin:/usr/local/sbin:/usr/local/bin:/usr/local/php55/bin:/usr/local/share/npm/bin:${PATH}
 export NODE_PATH=/usr/local/lib/node_modules:${NODE_PATH}
 
 export JAVA_HOME="$(/usr/libexec/java_home)"
@@ -13,5 +13,7 @@ export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
 export EDITOR=vim
 export VISUAL=vim
 export D4_EDITOR=mvim   # Only works for IDEs like Sublime Text 2, MacVim, etc... which have executable binary (subl, mvim), etc...
+
+export MARKPATH=$HOME/.marks
 
 source ~/.zshenv.local

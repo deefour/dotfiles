@@ -1,0 +1,5 @@
+function _marks {
+  reply=($(ls $MARKPATH))
+}
+compctl -K _marks jump
+compctl -K _marks unmark

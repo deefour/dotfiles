@@ -1,7 +1,4 @@
 se () {
-  test_s=`declare -f -F s`
-  if [ -n "$test_s" ]; then
-    s "$@"
-    e
-  fi
+  jump $1
+  e
 }

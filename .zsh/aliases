@@ -48,3 +48,7 @@ alias lssh='cat ~/.ssh/config | grep "Host " | cut -f2 -d\ '
 alias guard="guard --no-bundler-warning"
 
 alias jist='jist -c'
+
+alias flushmemcache="echo 'flush_all' | netcat localhost 11211"
+
+alias s="jump "
