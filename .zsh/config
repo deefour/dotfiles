@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 
 autoload -U $HOME/dotfiles/.zsh/functions/*(:t)
 
-plugins=(gem history github brew pow rsync rails4 composer tmux)
+plugins=(gem history github brew pow rsync rails composer tmux)
 
 # Customize to your needs...
 HISTCONTROL=ignoreboth
