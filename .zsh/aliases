@@ -13,6 +13,9 @@ alias tmux="nocorrect tmux "
 alias t="nocorrect tmux -u"
 alias fix="nocorrect fix "
 
+alias vagrant="nocorrect vagrant"
+alias v="nocorrect vagrant"
+
 alias reload!=". ~/.zshrc"
 
 # Flush DNS (OS X)
