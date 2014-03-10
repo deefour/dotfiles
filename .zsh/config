@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 
 autoload -U $HOME/dotfiles/.zsh/functions/*(:t)
 
-plugins=(gem history github brew pow rsync rails composer tmux)
+plugins=(gem history github brew pow rsync rails composer tmux zsh-syntax-highlighting zsh-history-substring-search)
 
 # Customize to your needs...
 HISTCONTROL=ignoreboth
@@ -26,6 +26,12 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
+
+# bind UP and DOWN arrow keys
+# @see https://github.com/zsh-users/zsh-history-substring-search
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 
 
 # Custom prompt
