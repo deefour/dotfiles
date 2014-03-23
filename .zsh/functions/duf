@@ -2,14 +2,14 @@
 duf () {
   du -sk "$@" | sort -n | while read size fname;
 
-  do 
+  do
     for unit in k M G T P E Z Y;
-      do if [ $size -lt 1024 ]; then 
-        echo -e "${size}${unit}\t${fname}"; 
-        break; 
-      fi; 
+      do if [ $size -lt 1024 ]; then
+        echo -e "${size}${unit}\t${fname}";
+        break;
+      fi;
 
-      size=$((size/1024)); 
-    done; 
+      size=$((size/1024));
+    done;
   done
 }
