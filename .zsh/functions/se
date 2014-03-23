@@ -1,4 +1,3 @@
 se () {
-  jump $1
-  e
+  jump $1 && e
 }
