@@ -1,4 +1,4 @@
-alias rst='touch tmp/restart.txt'
+alias rst='mkdir -p tmp && touch tmp/restart.txt'
 
 # ls
 alias ls="ls -F"
