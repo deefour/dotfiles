@@ -8,10 +8,7 @@ for COLOR in RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE; do
 done
 eval RESET='$reset_color'
 
-
-. ~/dotfiles/.zsh/aliases
-. ~/dotfiles/.zsh/completion
-. ~/dotfiles/.zsh/config
+. $DOT_ROOT/.zsh/config
 
 
 # use .localrc for settings specific to one system

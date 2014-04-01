@@ -1,6 +1,6 @@
 ZSH=$HOME/.oh-my-zsh
 
-autoload -U $HOME/dotfiles/.zsh/functions/*(:t)
+autoload -U $DOT_ROOT/.zsh/functions/*(:t)
 
 plugins=(gem history github brew pow rsync rails composer tmux zsh-syntax-highlighting zsh-history-substring-search)
 
@@ -15,7 +15,7 @@ REPORTTIME=10 # print elapsed time when more than 10 seconds
 
 source $ZSH/oh-my-zsh.sh
 
-for file in ~/dotfiles/zsh/{completion,aliases}; do
+for file in $DOT_ROOT/.zsh/{completion,aliases}; do
    [ -r "$file" ] && source "$file"
 done
 

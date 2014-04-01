@@ -1,4 +1,6 @@
-fpath=($fpath $HOME/dotfiles/.zsh/functions)
+export DOT_ROOT=$HOME/dotfiles
+
+fpath=($fpath $DOT_ROOT/.zsh/functions)
 typeset -U fpath
 
 export PATH=${HOME}/bin:${HOME}/.composer/vendor/bin:${HOME}/.cabal/bin:/usr/local/sbin:/usr/local/bin:/usr/local/php/bin:/usr/local/share/npm/bin:${PATH}
