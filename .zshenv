@@ -15,3 +15,5 @@ export ANSIBLE_NOCOWS=1
 export MARKPATH=$HOME/.marks
 
 source ~/.zshenv.local
+
+eval "$(rbenv init -)"

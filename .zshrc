@@ -14,6 +14,4 @@ eval RESET='$reset_color'
 # use .localrc for settings specific to one system
 [[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
 
-eval "$(rbenv init -)"
-
 [[ -s /Users/deefour/.nvm/nvm.sh ]] && . /Users/deefour/.nvm/nvm.sh # This loads NVM
