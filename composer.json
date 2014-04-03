@@ -1,0 +1,15 @@
+{
+    "name": "deefour/dotfiles",
+    "description": "Support for my dotfiles",
+    "require": {
+        "vlucas/phpdotenv": "dev-master"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jason Daly",
+            "email": "jason@deefour.me"
+        }
+    ],
+    "minimum-stability": "dev"
+}

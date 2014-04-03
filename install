@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+composer --version >/dev/null 2>&1 || { echo >&2 "Installer requires composer, but it's not available in \$PATH. Exiting."; exit 1; }
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 CALLER=$(ps ax | grep "^ *$PPID" | awk '{print $NF}')
 
