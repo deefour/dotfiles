@@ -22,7 +22,7 @@ if (preg_match('#^/index.php#', $requestURI) and getenv('SLIM_MODE')) {
   exit;
 }
 
-if (preg_match('#\/(.+)\-\-([\.a-z0-9\/]+)(\.[a-z0-9]+)$#i', $filename, $matches)) {
+if (preg_match('#\/(.+)\-\-([\.a-z0-9\/]+)(\.[a-z0-9]+)$#i', $requestURI, $matches)) {
   readfile($matches[1] . $matches[3]);
 } else {
   return false;
