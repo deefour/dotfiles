@@ -40,3 +40,5 @@
 	editor = vim
 [push]
 	default = matching
+[help]
+	autocorrect = 1
