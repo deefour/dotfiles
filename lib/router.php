@@ -23,7 +23,26 @@ if (preg_match('#^/index.php#', $requestURI) and getenv('SLIM_MODE')) {
 }
 
 if (preg_match('#\/(.+)\-\-([\.a-z0-9\/]+)(\.[a-z0-9]+)$#i', $requestURI, $matches)) {
-  readfile($matches[1] . $matches[3]);
+  $filename  = $publicRoot . '/' . $matches[1] . $matches[3];
+  $extension = pathinfo($filename, PATHINFO_EXTENSION);
+
+  // finfo can't reliably determine the mime-type for certain text files
+  // so we help out by matching against the file extension, falling back
+  // to finfo when a match is not found.
+  switch ($extension) {
+    case 'css':
+      $contentType = 'text/css';
+      break;
+    case 'js':
+      $contentType = 'text/javascript';
+      break;
+    default:
+      $finfo       = finfo_open(FILEINFO_MIME_TYPE);
+      $contentType = finfo_file($finfo, $filename);
+  }
+
+  header('Content-Type: ' . $contentType);
+  readfile($filename);
 } else {
   return false;
 }
