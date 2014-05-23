@@ -17,3 +17,6 @@ export MARKPATH=$HOME/.marks
 source ~/.zshenv.local
 
 eval "$(rbenv init -)"
+
+# interactive comments
+set -k
