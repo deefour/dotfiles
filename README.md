@@ -7,6 +7,7 @@ I use [janus](https://github.com/carlhuda/janus),
 [rbenv](https://github.com/sstephenson/rbenv), and
 [macvim](http://code.google.com/p/macvim/). The dotfiles are setup with
 this in mind.
+[direnv](https://github.com/zimbatm/direnv)
 
 ## Installation
 
@@ -20,8 +21,7 @@ this in mind.
 ## Local Changes
 
 If you're using my Dotfiles repo directly for your dotfiles setup, you
-can currently create `~/.zshrc.local` and `~/.zshenv.local` file to
-customize your setup. This is a good place to put changes specific to
-the computer you're working on or which are confidential *(things you
-don't want appearing in a public repo should you decide to publish your
-own fork/version of this repo)*
+can create `~/.zshrc.local` and `~/.zshenv.local` file to customize your setup.
+This is a good place to put changes specific to the computer you're working on
+or which are confidential *(things you don't want appearing in a public repo
+should you decide to publish your own fork/version of this repo)*.
