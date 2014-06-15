@@ -1,0 +1,11 @@
+serve () {
+  if [ ! -d "$1" ]; then
+    echo "`$1` is not a directory" && exit
+  fi
+
+  if [ -h "${HOME}/.app" ]; then
+    rm -f "${HOME}/.app"
+  fi
+
+  ln -s "$1" "${HOME}/.app" && vm reload
+}
