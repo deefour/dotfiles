@@ -1,0 +1,3 @@
+sup() {
+  jump $1 && serve .
+}
