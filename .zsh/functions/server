@@ -1,7 +1,7 @@
 # @see https://gist.github.com/JeffreyWay/1525217/#comment-72260
 server () {
-  port=${1:-8000}
-  router=${DOT_ROOT}/lib/router.php
+  local port=${1:-8000}
+  local router=${DOT_ROOT}/lib/router.php
 
   open "http://localhost:${port}" && php -Slocalhost:${port} ${router}
 }

@@ -1,9 +1,9 @@
 # vim set ft:bash
 getip () {
   if [ "$#" -lt 1 ]; then
-    ip=`ifconfig | awk -F':' '/inet addr/&&!/127.0.0.1/{split($2,_," ");print _[1]}' | sed  '2q;d'`
+    local ip=`ifconfig | awk -F':' '/inet addr/&&!/127.0.0.1/{split($2,_," ");print _[1]}' | sed  '2q;d'`
   else
-    ip=`nslookup "$1" | grep Add | grep -v '#' | cut -f 2 -d ' '`
+    local ip=`nslookup "$1" | grep Add | grep -v '#' | cut -f 2 -d ' '`
   fi
 
    if [ "$ip" = "" ]; then
