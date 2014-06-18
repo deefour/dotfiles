@@ -1,9 +1,9 @@
-vm() {
-  ${D4_VAGRANTFILE_HOME:?"The `$DEEFOUR_VAGRANTFILE_HOME` environment variable is not set"}
+function vm {
+  dir=${D4_VAGRANTFILE_HOME:?"The `$DEEFOUR_VAGRANTFILE_HOME` environment variable is not set"}
 
-  if [ ! -f "${D4_VAGRANTFILE_HOME}/Vagrantfile" ]; then
-    echo "`${DEEFOUR_VAGRANTFILE_HOME}/Vagrantfile` does not exist"
+  if [ ! -f "${dir}/Vagrantfile" ]; then
+    echo "`${dir}/Vagrantfile` does not exist"
   fi
 
-  (cd "$D4_VAGRANTFILE_HOME" && vagrant "$@")
+  ( cd "$dir" && vagrant "$@" )
 }
