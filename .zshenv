@@ -14,9 +14,12 @@ export ANSIBLE_NOCOWS=1
 
 export MARKPATH=$HOME/.marks
 
-source ~/.zshenv.local
-
-eval "$(rbenv init -)"
+# chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 
 # interactive comments
 set -k
+
+# apply local/private settings
+source ~/.zshenv.local
