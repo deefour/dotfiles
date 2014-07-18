@@ -4,7 +4,7 @@
 
 I use [janus](https://github.com/carlhuda/janus),
 [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh),
-[rbenv](https://github.com/sstephenson/rbenv), and
+[chruby](https://github.com/postmodern/chruby), and
 [macvim](http://code.google.com/p/macvim/). The dotfiles are setup with
 this in mind.
 [direnv](https://github.com/zimbatm/direnv)
