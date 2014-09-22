@@ -36,7 +36,7 @@
 [merge]
   tool = vimdiff
 [core]
-	excludesfile = /Users/deefour/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = vim
 [push]
 	default = matching
