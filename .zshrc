@@ -15,3 +15,7 @@ eval RESET='$reset_color'
 [[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
 
 [[ -s /Users/deefour/.nvm/nvm.sh ]] && . /Users/deefour/.nvm/nvm.sh # This loads NVM
+
+# php-version
+# @link https://github.com/wilmoore/php-version
+source $(brew --prefix php-version)/php-version.sh && php-version 5
