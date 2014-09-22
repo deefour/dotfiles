@@ -22,6 +22,10 @@ if (preg_match('#^/index.php#', $requestURI) and getenv('SLIM_MODE')) {
   exit;
 }
 
+if (file_exists($publicRoot . '/' . $requestURI)) {
+  return false;
+}
+
 if (preg_match('#\/(.+)\-\-([\.a-z0-9\/]+)(\.[a-z0-9]+)$#i', $requestURI, $matches)) {
   $filename  = $publicRoot . '/' . $matches[1] . $matches[3];
   $extension = pathinfo($filename, PATHINFO_EXTENSION);
