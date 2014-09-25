@@ -1,5 +1,28 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Remap the leader key
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader="\\"
 
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable unwanted janus default plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if !has('gui_running')
   call janus#disable_plugin('nerdtree')
 endif
+
+call janus#disable_plugin('snipmate')
+call janus#disable_plugin('vim-snippets')
+call janus#disable_plugin('supertab')
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" UltiSnips Configuration. This sits in the .vimrc.before because the internal
+" setup of the key mappings in ultisnips checks for the existence/value of
+" them to decide how to expand/jump.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
