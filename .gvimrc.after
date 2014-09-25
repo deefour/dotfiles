@@ -2,3 +2,4 @@ set transparency=6
 set background=dark
 set guioptions=egmt
 colorscheme Tomorrow-Night-Eighties
+set guifont=Source\ Code\ Pro:h13
