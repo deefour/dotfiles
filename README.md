@@ -13,6 +13,13 @@ this in mind.
 
  1. Install the applications mentioned in the **Prerequisites**.
  2. Run `cd ~ && git clone git://github.com/deefour/dotfiles.git && ~/dotfiles/install`
+ 3. Install the following vim plugins to `~/.janus`
+    - [phpqa](https://github.com/joonty/vim-phpqa)
+    - [Tabular](https://github.com/godlygeek/tabular)
+    - [UltiSnips](https://github.com/SirVer/ultisnips)
+    - [EasyMotion](https://github.com/Lokaltog/vim-easymotion)
+    - [speeddating.vim](https://github.com/tpope/vim-speeddating)
+
 
 ## Update
 
