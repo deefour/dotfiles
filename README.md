@@ -1,25 +1,29 @@
 # Deefour's Dotfiles
 
+If you are using a Mac, most dependencies below can be installed through [Homebrew](http://brew.sh/).
+
 ## Dependencies
 
-I use [janus](https://github.com/carlhuda/janus),
-[oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh),
-[chruby](https://github.com/postmodern/chruby), and
-[macvim](http://code.google.com/p/macvim/). The dotfiles are setup with
-this in mind.
-[direnv](https://github.com/zimbatm/direnv)
+ - [janus](https://github.com/carlhuda/janus)
+ - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
+ - [chruby](https://github.com/postmodern/chruby)
+ - [php-version](git@github.com:wilmoore/php-version.git)
+ - [macvim](http://code.google.com/p/macvim/)
+ - [direnv](https://github.com/zimbatm/direnv)
+ - [ctags](http://ctags.sourceforge.net/)
+
+For vim, the following plugins should be installed by cloning each git repository into `~/.janus`
+
+ - [PHP QA](https://github.com/joonty/vim-phpqa)
+ - [Tabular](https://github.com/godlygeek/tabular)
+ - [UltiSnips](https://github.com/SirVer/ultisnips)
+ - [EasyMotion](https://github.com/Lokaltog/vim-easymotion)
+ - [speeddating.vim](https://github.com/tpope/vim-speeddating)
 
 ## Installation
 
- 1. Install the applications mentioned in the **Prerequisites**.
+ 1. Install all dependencies listed above.
  2. Run `cd ~ && git clone git://github.com/deefour/dotfiles.git && ~/dotfiles/install`
- 3. Install the following vim plugins to `~/.janus`
-    - [PHP QA](https://github.com/joonty/vim-phpqa)
-    - [Tabular](https://github.com/godlygeek/tabular)
-    - [UltiSnips](https://github.com/SirVer/ultisnips)
-    - [EasyMotion](https://github.com/Lokaltog/vim-easymotion)
-    - [speeddating.vim](https://github.com/tpope/vim-speeddating)
-
 
 ## Update
 
