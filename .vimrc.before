@@ -26,3 +26,11 @@ call janus#disable_plugin('supertab')
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Disable the system beep
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set vb
+
