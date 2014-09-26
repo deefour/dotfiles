@@ -36,3 +36,8 @@ can create `~/.zshrc.local` and `~/.zshenv.local` file to customize your setup.
 This is a good place to put changes specific to the computer you're working on
 or which are confidential *(things you don't want appearing in a public repo
 should you decide to publish your own fork/version of this repo)*.
+
+## App Icon
+
+I use the "MacVim Replacement Icon" found on
+[Dribbble](https://dribbble.com/shots/337065-MacVim-Icon-Updated).
