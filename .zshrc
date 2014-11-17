@@ -16,6 +16,5 @@ eval RESET='$reset_color'
 
 [[ -s /Users/deefour/.nvm/nvm.sh ]] && . /Users/deefour/.nvm/nvm.sh # This loads NVM
 
-# php-version
-# @link https://github.com/wilmoore/php-version
-source $(brew --prefix php-version)/php-version.sh && php-version 5
+# phpbrew
+source $HOME/.phpbrew/bashrc
