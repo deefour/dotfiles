@@ -1,33 +1,27 @@
 <?php
 
-$publicRoot = $_SERVER['DOCUMENT_ROOT'];
-$autoload   = __DIR__ . '/../vendor/autoload.php';
-$requestURI = $_SERVER['REQUEST_URI'];
-$appRoot    = (strpos(basename($_SERVER['DOCUMENT_ROOT']), 'public') !== false) ?
-                dirname($publicRoot) :
-                $publicRoot;
+$app      = __DIR__ . '/..';
+$public   = $app . '/public';
+$autoload = $app . '/vendor/autoload.php';
 
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$uri = urldecode($uri);
 
 // Attempt to load .env for the project
 if (file_exists($autoload)) {
   require $autoload;
 
   try {
-    Dotenv::load($appRoot);
+    Dotenv::load($app);
   } catch (Exception $e) { }
 }
 
-if (preg_match('#^/index.php#', $requestURI) and getenv('SLIM_MODE')) {
-  header('Location: /' . ltrim(preg_replace('#^/index.php#', '', $requestURI), '/'));
-  exit;
-}
-
-if (file_exists($publicRoot . '/' . $requestURI)) {
+if (file_exists($public . '/' . $uri)) {
   return false;
 }
 
-if (preg_match('#\/(.+)\-\-([\.a-z0-9\/]+)(\.[a-z0-9]+)$#i', $requestURI, $matches)) {
-  $filename  = $publicRoot . '/' . $matches[1] . $matches[3];
+if (preg_match('#\/(.+)\-\-([\.a-z0-9\/]+)(\.[a-z0-9]+)$#i', $uri, $matches)) {
+  $filename  = $public . '/' . $matches[1] . $matches[3];
   $extension = pathinfo($filename, PATHINFO_EXTENSION);
 
   // finfo can't reliably determine the mime-type for certain text files
