@@ -1,11 +1,20 @@
 <?php
 
-$app      = __DIR__ . '/..';
-$public   = $app . '/public';
+// Configure
+$app      = $public = $_SERVER['DOCUMENT_ROOT'];
 $autoload = $app . '/vendor/autoload.php';
 
+if (basename($public) == 'public') {
+  $app = $app . '/..';
+}
+
+$indexHtml = glob($public . '/index.htm*');
+
+
+// URL Parsing
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = urldecode($uri);
+
 
 // Attempt to load .env for the project
 if (file_exists($autoload)) {
@@ -16,31 +25,32 @@ if (file_exists($autoload)) {
   } catch (Exception $e) { }
 }
 
-if (file_exists($public . '/' . $uri)) {
-  return false;
-}
 
+// Routing with support for cache busting tokens
 if (preg_match('#\/(.+)\-\-([\.a-z0-9\/]+)(\.[a-z0-9]+)$#i', $uri, $matches)) {
   $filename  = $public . '/' . $matches[1] . $matches[3];
-  $extension = pathinfo($filename, PATHINFO_EXTENSION);
 
-  // finfo can't reliably determine the mime-type for certain text files
-  // so we help out by matching against the file extension, falling back
-  // to finfo when a match is not found.
-  switch ($extension) {
-    case 'css':
-      $contentType = 'text/css';
-      break;
-    case 'js':
-      $contentType = 'text/javascript';
-      break;
-    default:
-      $finfo       = finfo_open(FILEINFO_MIME_TYPE);
-      $contentType = finfo_file($finfo, $filename);
-  }
+  serveFile($filename);
+} elseif ($uri === '/' and count($indexHtml)) {
+  serveFile($indexHtml[0]);
+} elseif ($uri !== '/' and file_exists($public . $uri)) {
+  return false;
+} else {
+  require_once $public . '/index.php';
+}
+
+
+
+/**
+ * Output a file, setting it's content-type.
+ *
+ * @param  string  $filename
+ * @return void
+ */
+function serveFile($filename) {
+  $finfo       = finfo_open(FILEINFO_MIME_TYPE);
+  $contentType = finfo_file($finfo, $filename);
 
   header('Content-Type: ' . $contentType);
   readfile($filename);
-} else {
-  return false;
 }

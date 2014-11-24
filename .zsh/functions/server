@@ -2,6 +2,11 @@
 server () {
   local port=${1:-8000}
   local router=${DOT_ROOT}/lib/router.php
+  local public_root="$(pwd)/public"
 
-  open "http://localhost:${port}" && php -Slocalhost:${port} ${router}
+  if [ ! -d "$public_root" ]; then
+    public_root="$(pwd)"
+  fi
+
+  (cd $public_root; open "http://localhost:${port}" && php -Slocalhost:${port} ${router})
 }
