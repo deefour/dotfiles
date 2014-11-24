@@ -1,5 +1,10 @@
 # @see https://gist.github.com/JeffreyWay/1525217/#comment-72260
 server () {
+  if type -p server >/dev/null; then
+    command server "$@"
+    return
+  fi
+
   local port=${1:-8000}
   local router=${DOT_ROOT}/lib/router.php
   local public_root="$(pwd)/public"

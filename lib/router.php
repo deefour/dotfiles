@@ -35,8 +35,10 @@ if (preg_match('#\/(.+)\-\-([\.a-z0-9\/]+)(\.[a-z0-9]+)$#i', $uri, $matches)) {
   serveFile($indexHtml[0]);
 } elseif ($uri !== '/' and file_exists($public . $uri)) {
   return false;
-} else {
+} elseif (file_exists($public . '/index.php')) {
   require_once $public . '/index.php';
+} else {
+  header(sprintf('HTTP/1.0 404 Not Found: \'%s\' does not exist', $uri), true, 404);
 }
 
 
@@ -50,6 +52,16 @@ if (preg_match('#\/(.+)\-\-([\.a-z0-9\/]+)(\.[a-z0-9]+)$#i', $uri, $matches)) {
 function serveFile($filename) {
   $finfo       = finfo_open(FILEINFO_MIME_TYPE);
   $contentType = finfo_file($finfo, $filename);
+  $extension   = pathinfo($filename, PATHINFO_EXTENSION);
+
+  switch($extension) {
+    case 'css':
+      $contentType = 'text/css';
+      break;
+    case 'js':
+      $contentType = 'text/js';
+      break;
+  }
 
   header('Content-Type: ' . $contentType);
   readfile($filename);
