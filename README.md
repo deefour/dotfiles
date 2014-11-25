@@ -19,6 +19,7 @@ For vim, the following plugins should be installed by cloning each git repositor
  - [UltiSnips](https://github.com/SirVer/ultisnips)
  - [EasyMotion](https://github.com/Lokaltog/vim-easymotion)
  - [speeddating.vim](https://github.com/tpope/vim-speeddating)
+ - [WindowSwap.vim](https://github.com/wesQ3/vim-windowswap)
 
 ## Installation
 

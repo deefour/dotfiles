@@ -1,11 +1,19 @@
 <?php
 
-$publicRoot = $_SERVER['DOCUMENT_ROOT'];
-$autoload   = __DIR__ . '/../vendor/autoload.php';
-$requestURI = $_SERVER['REQUEST_URI'];
-$appRoot    = (strpos(basename($_SERVER['DOCUMENT_ROOT']), 'public') !== false) ?
-                dirname($publicRoot) :
-                $publicRoot;
+// Configure
+$app      = $public = $_SERVER['DOCUMENT_ROOT'];
+$autoload = $app . '/vendor/autoload.php';
+
+if (basename($public) == 'public') {
+  $app = $app . '/..';
+}
+
+$indexHtml = glob($public . '/index.htm*');
+
+
+// URL Parsing
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$uri = urldecode($uri);
 
 
 // Attempt to load .env for the project
@@ -13,40 +21,48 @@ if (file_exists($autoload)) {
   require $autoload;
 
   try {
-    Dotenv::load($appRoot);
+    Dotenv::load($app);
   } catch (Exception $e) { }
 }
 
-if (preg_match('#^/index.php#', $requestURI) and getenv('SLIM_MODE')) {
-  header('Location: /' . ltrim(preg_replace('#^/index.php#', '', $requestURI), '/'));
-  exit;
-}
 
-if (file_exists($publicRoot . '/' . $requestURI)) {
+// Routing with support for cache busting tokens
+if (preg_match('#\/(.+)\-\-([\.a-z0-9\/]+)(\.[a-z0-9]+)$#i', $uri, $matches)) {
+  $filename  = $public . '/' . $matches[1] . $matches[3];
+
+  serveFile($filename);
+} elseif ($uri === '/' and count($indexHtml)) {
+  serveFile($indexHtml[0]);
+} elseif ($uri !== '/' and file_exists($public . $uri)) {
   return false;
+} elseif (file_exists($public . '/index.php')) {
+  require_once $public . '/index.php';
+} else {
+  header(sprintf('HTTP/1.0 404 Not Found: \'%s\' does not exist', $uri), true, 404);
 }
 
-if (preg_match('#\/(.+)\-\-([\.a-z0-9\/]+)(\.[a-z0-9]+)$#i', $requestURI, $matches)) {
-  $filename  = $publicRoot . '/' . $matches[1] . $matches[3];
-  $extension = pathinfo($filename, PATHINFO_EXTENSION);
 
-  // finfo can't reliably determine the mime-type for certain text files
-  // so we help out by matching against the file extension, falling back
-  // to finfo when a match is not found.
-  switch ($extension) {
+
+/**
+ * Output a file, setting it's content-type.
+ *
+ * @param  string  $filename
+ * @return void
+ */
+function serveFile($filename) {
+  $finfo       = finfo_open(FILEINFO_MIME_TYPE);
+  $contentType = finfo_file($finfo, $filename);
+  $extension   = pathinfo($filename, PATHINFO_EXTENSION);
+
+  switch($extension) {
     case 'css':
       $contentType = 'text/css';
       break;
     case 'js':
-      $contentType = 'text/javascript';
+      $contentType = 'text/js';
       break;
-    default:
-      $finfo       = finfo_open(FILEINFO_MIME_TYPE);
-      $contentType = finfo_file($finfo, $filename);
   }
 
   header('Content-Type: ' . $contentType);
   readfile($filename);
-} else {
-  return false;
 }
