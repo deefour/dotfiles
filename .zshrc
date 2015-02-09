@@ -17,4 +17,5 @@ eval RESET='$reset_color'
 [[ -s /Users/deefour/.nvm/nvm.sh ]] && . /Users/deefour/.nvm/nvm.sh # This loads NVM
 
 # phpbrew
+export PHPBREW_SET_PROMPT=0
 source $HOME/.phpbrew/bashrc
