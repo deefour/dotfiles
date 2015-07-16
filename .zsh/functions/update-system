@@ -1,0 +1,12 @@
+update-system() {
+  upgrade_oh_my_zsh
+
+  cd ~/.vim && rake;
+  cd ~/.janus && for f in `ls`; do cd $f && git pull origin master; cd ~/.janus; done;
+
+  brew update && brew upgrade
+
+  npm update -g
+
+  sudo softwareupdate -i -a
+}
