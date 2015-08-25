@@ -7,10 +7,8 @@ If you are using a Mac, most dependencies below can be installed through [Homebr
  - [janus](https://github.com/carlhuda/janus)
  - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
  - [chruby](https://github.com/postmodern/chruby)
- - [php-version](git@github.com:wilmoore/php-version.git)
  - [macvim](http://code.google.com/p/macvim/)
  - [direnv](https://github.com/zimbatm/direnv)
- - [ctags](http://ctags.sourceforge.net/)
 
 For vim, the following plugins should be installed by cloning each git repository into `~/.janus`
 
