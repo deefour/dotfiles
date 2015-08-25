@@ -14,8 +14,6 @@ eval RESET='$reset_color'
 # use .localrc for settings specific to one system
 [[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
 
-[[ -s /Users/deefour/.nvm/nvm.sh ]] && . /Users/deefour/.nvm/nvm.sh # This loads NVM
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
-# phpbrew
-export PHPBREW_SET_PROMPT=0
-source $HOME/.phpbrew/bashrc
