@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 
 autoload -U $DOT_ROOT/.zsh/functions/*(:t)
 
-plugins=(gem history github brew pow rsync rails composer tmux zsh-syntax-highlighting zsh-history-substring-search osx)
+plugins=(gem history brew pow rsync rails composer tmux zsh-syntax-highlighting zsh-history-substring-search osx)
 
 # Customize to your needs...
 HISTCONTROL=ignoreboth

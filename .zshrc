@@ -16,4 +16,3 @@ eval RESET='$reset_color'
 
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-

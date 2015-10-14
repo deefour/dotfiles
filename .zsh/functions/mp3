@@ -1,0 +1,12 @@
+mp3 () {
+  # @link https://github.com/exogen/dotfiles/blob/730fb8e2b72b2fc3aa3d90b889874bb5195e1d07/.profile#L79
+  #
+  # Get the best audio, convert it to MP3, and save it to the current
+  # directory.
+  youtube-dl --default-search=ytsearch: \
+             --restrict-filenames \
+             --format=bestaudio \
+             --extract-audio \
+             --audio-format=mp3 \
+             --audio-quality=1 "$*"
+}
