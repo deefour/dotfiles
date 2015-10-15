@@ -3,7 +3,7 @@ export DOT_ROOT=$HOME/dotfiles
 fpath=($fpath $DOT_ROOT/.zsh/functions)
 typeset -U fpath
 
-export PATH=./bin:./vendor/bin:${HOME}/bin:${HOME}/.composer/vendor/bin:$(brew --prefix homebrew/php/php56)/bin:/usr/local/sbin:/usr/local/bin:${PATH}
+export PATH=./bin:./vendor/bin:${HOME}/bin:${HOME}/.composer/vendor/bin:$(/usr/local/bin/brew --prefix homebrew/php/php56)/bin:/usr/local/sbin:/usr/local/bin:${PATH}
 export NODE_PATH=/usr/local/lib/node_modules:${NODE_PATH}
 
 export EDITOR=vim
