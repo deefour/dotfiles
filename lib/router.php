@@ -21,7 +21,7 @@ if (file_exists($autoload)) {
   require $autoload;
 
   try {
-    Dotenv::load($app);
+    (new Dotenv\Dotenv($app))->load();
   } catch (Exception $e) { }
 }
 
