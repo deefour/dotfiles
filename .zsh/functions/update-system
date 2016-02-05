@@ -6,6 +6,8 @@ update-system() {
 
   brew update && brew upgrade
 
+  brew cleanup
+
   npm update -g
 
   sudo softwareupdate -i -a
