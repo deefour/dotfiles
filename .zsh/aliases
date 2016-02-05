@@ -53,3 +53,5 @@ alias jist='jist -c'
 alias flushmemcache="echo 'flush_all' | netcat localhost 11211"
 
 alias s="jump "
+
+alias fix-cs="confirm && php-cs-fixer fix --level=psr2 --fixers=no_blank_lines_after_class_opening,single_blank_line_before_namespace,return,remove_leading_slash_use,align_equals,align_double_arrow,unused_use,concat_with_spaces,logical_not_operators_with_spaces,newline_after_open_tag,ordered_use,short_array_syntax,braces ./"
