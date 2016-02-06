@@ -2,7 +2,7 @@
     "name": "deefour/dotfiles",
     "description": "Support for my dotfiles",
     "require": {
-        "vlucas/phpdotenv": "dev-master"
+        "vlucas/phpdotenv": "2.2.0"
     },
     "license": "MIT",
     "authors": [

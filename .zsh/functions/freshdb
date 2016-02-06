@@ -1,0 +1,24 @@
+freshdb () {
+  [ -z "$1" ] && echo "A database must be specified" && return
+
+  zparseopts -D -E -- f::=force
+
+  force=${#force}
+  exists=$(mysql -e "show databases like '$1'")
+
+  if [ ! -z "$exists" ]; then
+    if [[ $force -eq 0 ]]; then
+      read -q "REPLY?Are you sure you want to destroy $1? "
+      echo    # (optional) move to a new line
+
+      if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+        return
+      fi
+    fi
+
+    mysqladmin drop -f $1 2>/dev/null;
+  fi
+
+  mysqladmin create $1
+  echo "Database \"$1\" created"
+}

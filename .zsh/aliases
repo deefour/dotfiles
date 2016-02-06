@@ -43,8 +43,6 @@ alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Framew
 # Also, clear Apple’s System Logs to improve shell startup speed
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
-alias update-system='upgrade_oh_my_zsh; cd ~/.vim && rake; cd ~; brew update; brew upgrade; npm update -g; sudo softwareupdate -i -a;'
-
 alias lssh='cat ~/.ssh/config | grep "Host " | cut -f2 -d\ '
 
 alias guard="guard --no-bundler-warning"
@@ -54,3 +52,5 @@ alias jist='jist -c'
 alias flushmemcache="echo 'flush_all' | netcat localhost 11211"
 
 alias s="jump "
+
+alias fix-cs="confirm && php-cs-fixer fix --level=psr2 --fixers=no_blank_lines_after_class_opening,single_blank_line_before_namespace,return,remove_leading_slash_use,align_equals,align_double_arrow,unused_use,concat_with_spaces,logical_not_operators_with_spaces,newline_after_open_tag,ordered_use,short_array_syntax,braces ./"
