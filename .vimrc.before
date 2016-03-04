@@ -43,4 +43,3 @@ let g:syntastic_php_checkers = ['php', 'phpcs --standard=PSR2']
 " Auto ctags
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gutentags_exclude = [ '.git', 'node_modules', '*.sql' ]
-let g:gutentags_auto_set_tags = 1
