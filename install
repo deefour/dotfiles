@@ -13,9 +13,9 @@ done
 
 if [ -z "$(echo $CALLER | awk '/update/')" ]; then
   git branch --set-upstream master origin/master
-  echo "Deefour's Dotfiles have been installed."
+  echo "Dotfiles have been installed."
 else
-  echo "Deefour's Dotfiles have been updated."
+  echo "Dotfiles have been updated."
 fi
 
 # install extra plugins
@@ -24,3 +24,7 @@ cd ~/.oh-my-zsh/custom/plugins
 
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 git clone git://github.com/zsh-users/zsh-history-substring-search.git
+
+# NPM packages
+npm install -g diff-so-fancy
+npm install -g npm-check-updates

@@ -1,5 +1,7 @@
-set transparency=6
-set background=dark
+set transparency=1
+set background=light
 set guioptions=egmt
-colorscheme Tomorrow-Night-Eighties
-set guifont=Source\ Code\ Pro:h13
+set guifont=Source\ Code\ Pro:h14
+set linespace=5
+
+color playroom
