@@ -46,3 +46,5 @@ let g:syntastic_php_checkers = ['php', 'phpcs --standard=PSR2']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gutentags_exclude = [ '.git', 'node_modules', '*.sql' ]
 let g:gutentags_ctags_executable = "ctags -R --fields=+aimS --languages=php"
+
+let g:CommandTWildIgnore=&wildignore . ",**/node_modules/*,**/bower_components/*,storage/*"
