@@ -97,13 +97,6 @@ let NERDTreeIgnore=['\.git$', '\.DS_Store$']
 let NERDTreeShowHidden=1
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TagBar configuration to auto-open tagbar when vim or a supported file opens
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd VimEnter * nested :call tagbar#autoopen(1)
-autocmd FileType * nested :call tagbar#autoopen(0)
-
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim snippet configuration.

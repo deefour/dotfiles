@@ -10,12 +10,14 @@ let mapleader="\\"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if !has('gui_running')
   call janus#disable_plugin('nerdtree')
+  call janus#disable_plugin('tagbar')
 endif
 
 "call janus#disable_plugin('snipmate')
 "call janus#disable_plugin('vim-snippets')
 "call janus#disable_plugin('supertab')
 call janus#disable_plugin('vim-trailing-whitespace')
+
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -43,3 +45,4 @@ let g:syntastic_php_checkers = ['php', 'phpcs --standard=PSR2']
 " Auto ctags
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gutentags_exclude = [ '.git', 'node_modules', '*.sql' ]
+let g:gutentags_ctags_executable = "ctags -R --fields=+aimS --languages=php"
