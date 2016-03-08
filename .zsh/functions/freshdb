@@ -8,7 +8,7 @@ freshdb () {
 
   if [ ! -z "$exists" ]; then
     if [[ $force -eq 0 ]]; then
-      read -q "REPLY?Are you sure you want to destroy $1? "
+      confirm "Are you sure you want to destroy $1?"
       echo    # (optional) move to a new line
 
       if [[ ! $REPLY =~ ^[Yy]$ ]]; then
