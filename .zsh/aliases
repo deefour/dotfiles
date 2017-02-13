@@ -3,6 +3,8 @@
 alias rst='mkdir -p tmp && touch tmp/restart.txt'
 
 # deeper navigation
+alias ..="cd .."
+alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
@@ -21,9 +23,6 @@ alias tmux="nocorrect tmux "
 alias t="nocorrect tmux -u"
 alias fix="nocorrect fix "
 
-alias vagrant="nocorrect vagrant"
-alias v="nocorrect vagrant"
-
 alias reload!=". ~/.zshrc"
 
 # Flush DNS (OS X)
@@ -36,10 +35,6 @@ alias pngfix="pngcrush -rem gAMA -rem cHRM -rem iCCP -rem sRGB $1 $2"
 alias gst="git st "
 alias gp="git ap "
 
-# Show/hide hidden files in Finder
-alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
-
 # Fix Finder's 'Open With'
 # @see http://osxdaily.com/2013/01/22/fix-open-with-menu-mac-os-x/
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
@@ -50,12 +45,5 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 
 alias lssh='cat ~/.ssh/config | grep "Host " | cut -f2 -d\ '
 
-alias flushmemcache="echo 'flush_all' | netcat localhost 11211"
-
 alias s="jump "
-
-alias fix-cs="confirm && php-cs-fixer fix --level=psr2 --fixers=no_blank_lines_after_class_opening,single_blank_line_before_namespace,return,remove_leading_slash_use,align_equals,align_double_arrow,unused_use,concat_with_spaces,logical_not_operators_with_spaces,newline_after_open_tag,ordered_use,short_array_syntax,braces ./"
-
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-  alias "$method"="lwp-request -m '$method'"
-done
+alias se="jump $1 && e"

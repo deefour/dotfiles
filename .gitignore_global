@@ -59,6 +59,9 @@ lib-cov
 
 pids
 logs
+tags
+
+.vagrant-inventory
 
 
 
@@ -71,6 +74,8 @@ node_modules
 
 # PHP/Composer
 # ----------------------------------------
+/vendor
+composer.lock
 
 
 
@@ -82,7 +87,7 @@ tmtags
 /*.sublime-project
 *.sublime-workspace
 *.cache
-
+.idea/
 
 # Mac OS
 # ----------------------------------------

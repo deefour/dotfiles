@@ -13,10 +13,6 @@ export ANSIBLE_NOCOWS=1
 
 export MARKPATH=$HOME/.marks
 
-# chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-
 # interactive comments
 set -k
 

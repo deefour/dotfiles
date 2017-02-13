@@ -23,26 +23,25 @@ setopt HIST_REDUCE_BLANKS
 # bind keys for history search
 zmodload zsh/terminfo
 
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+# bindkey "$terminfo[kcuu1]" history-substring-search-up
+# bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey '^R' history-incremental-pattern-search-backward
 
-
 # antigen
-source "${HOME}/.antigen/antigen.zsh"
-
-antigen bundle extract
-antigen bundle git
-antigen bundle brew
-antigen bundle brew-cask
-antigen bundle tmux
-antigen bundle command-not-found
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-autosuggestions
+source /usr/local/share/antigen/antigen.zsh
 
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
+
+antigen bundle extract
+antigen bundle brew
+antigen bundle tmux
+antigen bundle httpie
+antigen bundle command-not-found
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-autosuggestions
 
 antigen apply
 

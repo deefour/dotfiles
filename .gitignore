@@ -3,3 +3,4 @@
 composer.lock
 .vagrant-inventory
 tags
+.idea

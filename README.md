@@ -5,8 +5,7 @@ If you are using a Mac, most dependencies below can be installed through [Homebr
 ## Dependencies
 
  - [janus](https://github.com/carlhuda/janus)
- - [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
- - [chruby](https://github.com/postmodern/chruby)
+ - [antigen](https://github.com/zsh-users/antigen)
  - [macvim](http://code.google.com/p/macvim/)
  - [direnv](https://github.com/zimbatm/direnv)
 
