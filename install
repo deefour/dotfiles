@@ -9,8 +9,6 @@ for file in $symlinks; do
   [ ! -h "${HOME}/$(basename $file)" ] && ln -s $file "${HOME}/$(basename $file)"
 done
 
-composer install
-
 if [ -z "$(echo $CALLER | awk '/update/')" ]; then
   git branch --set-upstream master origin/master
   echo "Dotfiles have been installed."
@@ -19,7 +17,7 @@ else
 fi
 
 # antigen
-git clone https://github.com/zsh-users/antigen.git "${HOME}/.antigen"
+brew install antigen
 
 # janus/vim plugins
 cd "${HOME}/.janus"
