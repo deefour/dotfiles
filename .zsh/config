@@ -1,18 +1,15 @@
 autoload -U $DOT_ROOT/.zsh/functions/*(:t)
 
-# aliases and functions
-for file in $DOT_ROOT/.zsh/{completion,aliases}; do
-   [ -r "$file" ] && source "$file"
-done
-
 COLORTERM=yes
 PAGER=less
 EDITOR=vim
+VISUAL=vim
 PURE_CMD_MAX_EXEC_TIME=10 # print elapsed time when more than 10 seconds
 
 # history
 HISTFILE=~/.zhistory
 HISTSIZE=SAVEHIST=10000
+
 setopt SHARE_HISTORY        # shared history between session
 setopt EXTENDED_HISTORY     # timestamp for history
 setopt APPEND_HISTORY       # adds history
@@ -23,28 +20,25 @@ setopt HIST_REDUCE_BLANKS
 # bind keys for history search
 zmodload zsh/terminfo
 
-# bindkey "$terminfo[kcuu1]" history-substring-search-up
-# bindkey "$terminfo[kcud1]" history-substring-search-down
-bindkey '^R' history-incremental-pattern-search-backward
-
 # antigen
 source /usr/local/share/antigen/antigen.zsh
 
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
-
+antigen bundle common-aliases
 antigen bundle extract
 antigen bundle brew
 antigen bundle tmux
+antigen bundle autojump
 antigen bundle httpie
 antigen bundle command-not-found
-
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zpm-zsh/mysql-colorize
+antigen bundle zdharma/history-search-multi-word
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zdharma/zsh-diff-so-fancy
+antigen bundle zdharma/fast-syntax-highlighting
 
 antigen apply
-
 
 # Automatically list directory contents on `cd`.
 auto-ls () {
@@ -54,5 +48,8 @@ auto-ls () {
 }
 chpwd_functions=( auto-ls $chpwd_functions )
 
-
+zstyle :plugin:history-search-multi-word reset-prompt-protect 1
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' insert-tab pending
+
+source $DOT_ROOT/.zsh/aliases

@@ -88,6 +88,7 @@ tmtags
 *.sublime-workspace
 *.cache
 .idea/
+.vscode/
 
 # Mac OS
 # ----------------------------------------

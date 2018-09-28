@@ -1,2 +1,0 @@
-defaults write com.sublimetext.2 ApplePressAndHoldEnabled -bool false
-defaults write com.apple.Finder AppleShowAllFiles -bool false
