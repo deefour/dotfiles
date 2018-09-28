@@ -5,8 +5,6 @@ update-system() {
   antigen update
   antigen selfupdate
 
-  composer global update
-
   antigen cleanup --force
 
   brew update && brew upgrade

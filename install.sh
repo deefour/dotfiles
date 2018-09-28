@@ -16,8 +16,7 @@ else
   echo "Dotfiles have been updated."
 fi
 
-# antigen
-brew install antigen
+source brew.sh
 
 # janus/vim plugins
 cd "${HOME}/.janus"
@@ -35,6 +34,3 @@ git clone git://github.com/shawncplus/phpcomplete.vim.git 2>/dev/null || true
 
 # NPM dependencies
 npm install -g yarn gulp prettyjson
-
-# Homebrew dependencies
-brew install gnu-sed ansible composer git ffmpeg autojump httpie htop go jq mariadb youtube-dl tmux telnet sqlite pandoc redis ruby gd imagemagick ssh-copy-id zsh bat exa nvm

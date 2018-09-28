@@ -3,11 +3,11 @@
 ## Installation
 
  1. Install [Homebrew](http://brew.sh/) (These dotfiles are mac-oriented)
- 2. Run `cd ~ && git clone git://github.com/deefour/dotfiles.git && ~/dotfiles/install`
+ 2. Run `cd ~ && git clone git://github.com/deefour/dotfiles.git && ~/dotfiles/install.sh`
 
 ## Update
 
- 1. Run `~/dotfiles/update`
+ 1. Run `~/dotfiles/update.sh`
 
 ## Local Changes
 
