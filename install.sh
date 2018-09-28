@@ -1,24 +1,20 @@
 #!/usr/bin/env bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-CALLER=$(ps ax | grep "^ *$PPID" | awk '{print $NF}')
 
-symlinks=`find $DIR -type f -maxdepth 1 -name \.\*`
+echo "Linking dot files to ~/"
+symlinks=`find . -type f -maxdepth 1 -name '.*' | grep -v .DS_Store`
 
 for file in $symlinks; do
   [ ! -h "${HOME}/$(basename $file)" ] && ln -s $file "${HOME}/$(basename $file)"
 done
 
-if [ -z "$(echo $CALLER | awk '/update/')" ]; then
-  git branch --set-upstream master origin/master
-  echo "Dotfiles have been installed."
-else
-  echo "Dotfiles have been updated."
-fi
 
+echo "Installing homebrew dependencies"
 source brew.sh
 
-# janus/vim plugins
+
+echo "Install vim dependencies"
 cd "${HOME}/.janus"
 
 git clone git@github.com:editorconfig/editorconfig-vim.git 2>/dev/null || true
@@ -32,5 +28,9 @@ git clone git://github.com/tpope/vim-fugitive.git 2>/dev/null || true
 git clone git@github.com:tpope/vim-speeddating.git 2>/dev/null || true
 git clone git://github.com/shawncplus/phpcomplete.vim.git 2>/dev/null || true
 
-# NPM dependencies
+cd "$HOME"
+
+echo "Installing node dependencies"
 npm install -g yarn gulp prettyjson
+
+echo "Done!"
