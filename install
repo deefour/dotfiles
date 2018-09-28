@@ -17,7 +17,7 @@ else
 fi
 
 # antigen
-git clone https://github.com/zsh-users/antigen.git "${HOME}/.antigen"
+brew install antigen
 
 # janus/vim plugins
 cd "${HOME}/.janus"
