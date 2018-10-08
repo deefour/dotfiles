@@ -9,6 +9,8 @@ for file in $symlinks; do
   [ ! -h "${HOME}/$(basename $file)" ] && ln -s $file "${HOME}/$(basename $file)"
 done
 
+# silence login messages
+touch ~/.hushlogin
 
 echo "Installing homebrew dependencies"
 source brew.sh
