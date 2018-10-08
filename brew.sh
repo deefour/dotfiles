@@ -1,55 +1,60 @@
 #!/usr/bin/env bash
 
+install() {
+  brew info "$1" | grep --quiet 'Not installed' && brew install "$1"
+}
+
 brew update
 
 brew upgrade
 
 # shell stuff
-brew install zsh
-brew install antigen
-brew install autojump
+install zsh
+install antigen
+install autojump
 
 # dev tools
-brew install git
-brew install htop
-brew install composer
-brew install tmux
-brew install ssh-copy-id
-brew install bat
-brew install exa
-brew install nvm
-brew install jq
-brew install gnu-sed --with-default-names
-brew install findutils
-brew install diff-so-fancy
-brew install ansible
+install git
+install htop
+install composer
+install tmux
+install ssh-copy-id
+install bat
+install exa
+install nvm
+install jq
+install gnu-sed --with-default-names
+install findutils
+install diff-so-fancy
+install ansible
+install tree
 
 # http tools
-brew install httpie
-brew install wget
-brew install telnet
+install httpie
+install wget
+install telnet
 
 # stores
-brew install mariadb
-brew install sqlite
-brew install redis
+install mariadb
+install sqlite
+install redis
 
 # for vim
-brew install ctags
-brew install vim --with-override-system-vi
+install ctags
+install vim --with-override-system-vi
 
 # languages
-brew install go
-brew install ruby
-brew install php@7.1
+install go
+install ruby
+install php@7.1
 
 # media
-brew install youtube-dl
+install youtube-dl
 
 # conversion tools
-brew install ffmpeg
-brew install gd
-brew install imagemagick
-brew install pandoc
+install ffmpeg
+install gd
+install imagemagick
+install pandoc
 
 brew cleanup
