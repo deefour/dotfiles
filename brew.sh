@@ -28,6 +28,7 @@ install findutils
 install diff-so-fancy
 install ansible
 install tree
+install coreutils
 
 # http tools
 install httpie
