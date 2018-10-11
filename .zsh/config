@@ -32,7 +32,6 @@ antigen bundle tmux
 antigen bundle autojump
 antigen bundle httpie
 antigen bundle command-not-found
-antigen bundle zpm-zsh/mysql-colorize
 antigen bundle zdharma/history-search-multi-word
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zdharma/zsh-diff-so-fancy
