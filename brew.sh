@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 install() {
-  brew info "$1" | grep --quiet 'Not installed' && brew install "$1"
+  brew info "$1" | grep --quiet 'Not installed' && brew install "$@"
 }
 
 brew update
