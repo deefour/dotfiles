@@ -12,8 +12,14 @@ done
 # silence login messages
 touch ~/.hushlogin
 
-echo "Installing homebrew dependencies"
-source brew.sh
+if [[ $(uname -s) == Darwin ]]
+then
+  echo "Installing homebrew dependencies"
+  source brew.sh
+
+  echo "Modifying mac settings"
+  source mac.sh
+fi
 
 
 echo "Install vim dependencies"
