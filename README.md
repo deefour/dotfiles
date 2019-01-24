@@ -2,7 +2,7 @@
 
 My dotfiles for work (Mac) and home (Ubuntu Linux).
 
-Includes handful of vim plugins, added zsh functionality via antigen, support for nvm, and a handful of npm and Homebrew (for mac only) packages I use. See [`install.sh`](#) and [`brew.sh`](#) for specifics.
+Includes handful of vim plugins, added zsh functionality via antigen, support for nvm, and a handful of npm and Homebrew (for mac only) packages I use. See [`install.sh`](https://github.com/deefour/dotfiles/blob/master/install.sh) and [`brew.sh`](https://github.com/deefour/dotfiles/blob/master/brew.sh) for specifics.
 
 > **Note:** You should probably fork this repository, read through the files, and make changes to suit your workflow before running `install.sh`.
 
