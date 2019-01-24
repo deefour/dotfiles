@@ -1,5 +1,4 @@
-. $DOT_ROOT/.zsh/config
-. $DOT_ROOT/.zsh/nvm
+source $DOT_ROOT/.zsh/config
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 

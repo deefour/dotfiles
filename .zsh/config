@@ -21,7 +21,7 @@ setopt HIST_REDUCE_BLANKS
 zmodload zsh/terminfo
 
 # antigen
-source /usr/local/share/antigen/antigen.zsh
+source $DOT_ROOT/antigen.zsh
 
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure

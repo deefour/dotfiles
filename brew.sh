@@ -10,7 +10,6 @@ brew upgrade
 
 # shell stuff
 install zsh
-install antigen
 install autojump
 
 # dev tools
