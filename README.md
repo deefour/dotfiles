@@ -6,20 +6,17 @@ Includes handful of vim plugins, added zsh functionality via antigen, support fo
 
 > **Note:** You should probably fork this repository, read through the files, and make changes to suit your workflow before running `install.sh`.
 
-## Dependencies
-
- - Node.js *(`npm` should be on the `$PATH`)*
-
 ## Installation
 
- 1. Install [Homebrew](http://brew.sh/) (These dotfiles are mac-oriented)
- 2. Run `cd ~ && git clone git://github.com/deefour/dotfiles.git && ~/dotfiles/install.sh`
+ 1. Run `cd ~ && git clone git://github.com/deefour/dotfiles.git && ~/dotfiles/install.sh`
+ 2. Close and reopen your terminal
 
 > **Note:** You can put this repository outside your `$HOME` as long as it is symlink'd to your `$HOME` directory.
 
 ## Update
 
  1. Run `~/dotfiles/update.sh`
+ 2. Close the terminal session
 
 ## Local Changes
 

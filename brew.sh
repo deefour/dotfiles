@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# install homebrew
+if [ -z "$(which brew | grep 'not found')" ]
+then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
 install() {
   brew info "$1" | grep --quiet 'Not installed' && brew install "$@"
 }
@@ -9,11 +15,12 @@ brew update
 brew upgrade
 
 # shell stuff
-install zsh
 install autojump
 
 # dev tools
 install git
+install zsh
+install yarn
 install htop
 install composer
 install tmux

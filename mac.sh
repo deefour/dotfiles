@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source "brew.sh"
+
 # ~/.macos — https://mths.be/macos
 
 # Close any open System Preferences panes, to prevent them from overriding

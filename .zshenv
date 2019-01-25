@@ -20,5 +20,3 @@ setopt interactivecomments
 # apply local/private settings
 [[ -f ~/.zshenv.local ]] && . ~/.zshenv.local
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
