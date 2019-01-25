@@ -4,7 +4,13 @@ echo "Installing ZSH"
 
 sudo apt update
 
-sudo apt install git
-sudo apt install zsh
+install () {
+  sudo apt install "$1" -y
+}
+
+install git
+install zsh
+install curl
+install tmux
 
 source nix.sh
