@@ -12,5 +12,8 @@ install git
 install zsh
 install curl
 install tmux
+install composer
+
+sudo chown "$(whoami).$(whoami)" ~/.composer -R
 
 source nix.sh
