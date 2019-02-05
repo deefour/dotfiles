@@ -4,7 +4,7 @@ janus_directory="${HOME}/.janus"
 
 if [ -d "$janus_directory" ]; then
   echo "Install vim dependencies"
-  cd "$janus_directory"
+  pushd "$janus_directory"
 
   git clone git@github.com:editorconfig/editorconfig-vim.git 2>/dev/null || true
   git clone https://github.com/mattn/emmet-vim.git 2>/dev/null || true
@@ -17,5 +17,5 @@ if [ -d "$janus_directory" ]; then
   git clone git@github.com:tpope/vim-speeddating.git 2>/dev/null || true
   git clone git://github.com/shawncplus/phpcomplete.vim.git 2>/dev/null || true
 
-  cd "$HOME"
+  popd
 fi
