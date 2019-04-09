@@ -14,6 +14,7 @@ endif
 
 call janus#disable_plugin('vim-trailing-whitespace')
 call janus#disable_plugin('tagbar')
+call janus#disable_plugin('ultisnips')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Disable the system beep
