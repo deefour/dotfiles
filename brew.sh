@@ -54,7 +54,6 @@ install vim --with-override-system-vi
 install go
 install ruby
 install php
-install php@7.1
 
 # media
 install youtube-dl
