@@ -13,6 +13,7 @@ install zsh
 install curl
 install tmux
 install composer
+install dnsmasq
 
 sudo chown "$(whoami).$(whoami)" ~/.composer -R
 

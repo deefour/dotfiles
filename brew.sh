@@ -36,6 +36,13 @@ install ansible
 install tree
 install coreutils
 
+
+install dust
+install bb
+install restic
+install tig
+install fd
+
 # http tools
 install httpie
 install wget
