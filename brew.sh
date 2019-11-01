@@ -53,6 +53,7 @@ install vim --with-override-system-vi
 # languages
 install go
 install ruby
+install php
 install php@7.1
 
 # media
