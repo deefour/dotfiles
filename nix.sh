@@ -22,5 +22,10 @@ install nixpkgs.python27Packages.youtube-dl
 install nixpkgs.jq
 install nixpkgs.autojump
 install nixpkgs.yarn
+install nixpkgs.dust
+install nixpkgs.bb
+install nixpkgs.restic
+install nixpkgs.tig
+install nixpkgs.fd
 
 nix-collect-garbage -d
