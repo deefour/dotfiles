@@ -10,6 +10,10 @@ install() {
   brew info "$1" | grep --quiet 'Not installed' && brew install "$@"
 }
 
+cask-install() {
+  brew cask info "$1" | grep --quiet 'Not installed' && brew cask install "$@"
+}
+
 brew update
 
 brew upgrade
@@ -70,5 +74,8 @@ install ffmpeg
 install gd
 install imagemagick
 install pandoc
+
+cask-install google-chrome
+cask-install insomnia
 
 brew cleanup

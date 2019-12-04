@@ -10,15 +10,21 @@ install() {
   nix-env -iA "$1"
 }
 
+mkdir -p ~/.config/nixpkgs
+
+# allow applications like chrome to be installedS
+echo "{ allowUnfree = true; }" > ~/.config/nixpkgs/config.nix
+
 nix-channel --update
 nix-env -u
 
+install gitAndTools.diff-so-fancy
+install python27Packages.youtube-dl
+
 install nixpkgs.pandoc
-install nixpkgs.gitAndTools.diff-so-fancy
 install nixpkgs.exa
 install nixpkgs.bat
 install nixpkgs.httpie
-install nixpkgs.python27Packages.youtube-dl
 install nixpkgs.jq
 install nixpkgs.autojump
 install nixpkgs.yarn
@@ -27,5 +33,11 @@ install nixpkgs.bb
 install nixpkgs.restic
 install nixpkgs.tig
 install nixpkgs.fd
+install nixpkgs.insomnia
+install nixpkgs.vscode
+install nixpkgs.google-chrome
+install nixpkgs.docker
+install nixpkgs.mariadb
+install nixpkgs.ansible
 
 nix-collect-garbage -d

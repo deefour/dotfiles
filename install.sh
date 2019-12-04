@@ -4,6 +4,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 pushd $DIR
 
+source config.sh
+
 echo "Linking dot files to ~/"
 symlinks=`find "$(pwd)" -maxdepth 1 -type f -name '.*' | grep -v .DS_Store`
 
