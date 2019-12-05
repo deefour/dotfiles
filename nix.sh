@@ -18,9 +18,6 @@ echo "{ allowUnfree = true; }" > ~/.config/nixpkgs/config.nix
 nix-channel --update
 nix-env -u
 
-install gitAndTools.diff-so-fancy
-install python27Packages.youtube-dl
-
 install nixpkgs.pandoc
 install nixpkgs.exa
 install nixpkgs.bat
@@ -35,9 +32,10 @@ install nixpkgs.tig
 install nixpkgs.fd
 install nixpkgs.insomnia
 install nixpkgs.vscode
-install nixpkgs.google-chrome
 install nixpkgs.docker
 install nixpkgs.mariadb
 install nixpkgs.ansible
+install nixpkgs.virtualbox
+install nixpkgs.vagrant
 
 nix-collect-garbage -d

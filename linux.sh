@@ -18,6 +18,7 @@ install tmux
 install composer
 install ddnsmasq
 install dfs
+install gdebi
 
 # install php
 phppkgs=(bcmath gd mbstring pdo curl xml json mysql)
