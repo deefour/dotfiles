@@ -17,7 +17,7 @@
   amend = commit --amend
   aa = add --all
   ff = merge --ff-only
-  b = branch -vv
+  b = "git --no-pager branch -vv"
   ds = diff --stat=160,120
   dh1 = diff HEAD~1
   pr = pull --rebase
