@@ -11,17 +11,16 @@ install () {
   sudo apt install "$1" -y
 }
 
+install build-essential
 install git
-install zsh
-install curl
-install tmux
-install composer
 install ddnsmasq
 install dfs
 install gdebi
 
 # install php
 phppkgs=(bcmath gd mbstring pdo curl xml json mysql)
+
+PHP_VERSION=7.4
 
 install "php${PHP_VERSION}"
 
@@ -32,8 +31,9 @@ done
 # turn off apache
 sudo systemctl disable --now apache2
 
+mkdir ~/.composer
 sudo chown "$(whoami).$(whoami)" ~/.composer -R
 
-source nix.sh
+source brew.sh
 
 sudo apt autoremove -y

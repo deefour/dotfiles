@@ -1,22 +1,17 @@
-export DOT_ROOT="$HOME/dotfiles"
+export DOT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-fpath=($fpath $DOT_ROOT/.zsh/functions)
-typeset -U fpath
-
-export PATH=./bin:./vendor/bin:${HOME}/bin:${HOME}/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin
-export NODE_PATH=/usr/local/lib/node_modules:${NODE_PATH}
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin
+export PATH=$HOME/bin:$PATH
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+export PATH=$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
+export PATH=$HOME/.composer/vendor/bin:$PATH
 
 export EDITOR=vim
 export VISUAL=vim
 
 export ANSIBLE_NOCOWS=1
-
-export MARKPATH=$HOME/.marks
-
 export BAT_THEME="Monokai Extended Bright"
+export NVM_DIR="$HOME/.nvm"
 
-setopt interactivecomments
-
-# apply local/private settings
-[[ -f ~/.zshenv.local ]] && . ~/.zshenv.local
-
+# use .zshenv.local for settings specific to one system
+[[ -f ~/.zshenv.local ]] && source ~/.zshenv.local

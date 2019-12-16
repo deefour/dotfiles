@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export DOT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-pushd $DIR
+grep -qF DOT_ROOT ~/.zshenv.local || echo "$DOT_ROOT" >> ~/.zshenv.local
 
-source config.sh
+pushd $DOT_ROOT
+
+source .zshenv
 
 echo "Linking dot files to ~/"
 symlinks=`find "$(pwd)" -maxdepth 1 -type f -name '.*' | grep -v .DS_Store`
@@ -21,7 +23,7 @@ echo "Installing antigen (zsh bundle manager)"
 curl -L git.io/antigen > antigen.zsh
 
 echo "Installing NVM"
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
 
 if [[ $(uname -s) == Darwin ]]
 then

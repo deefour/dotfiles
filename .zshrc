@@ -1,21 +1,14 @@
+fpath=($fpath /home/linuxbrew/.linuxbrew/share/zsh/site-functions)
+fpath=($fpath $DOT_ROOT/.zsh/functions)
+
+typeset -U fpath
+
+setopt interactivecomments
+
 source $DOT_ROOT/.zsh/config
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+[[ -f ~/$NVM_DIR ]] && source "$NVM_DIR/nvm.sh"
+[[ -f ~/$NVM_DIR ]] && source "$NVM_DIR/bash_completion"
 
-# use .localrc for settings specific to one system
-[[ -f ~/.zshrc.local ]] && . ~/.zshrc.local
-
-# Configure NVM
-export NVM_DIR="$HOME/.nvm"
-
-if [ -d "$NVM_DIR" ]
-then
-  source "$NVM_DIR/nvm.sh"
-  source "$NVM_DIR/bash_completion"
-fi
-
-# Configure nix-env when on linux
-if [ -d "$HOME/.nix-profile" ]
-then
-  source "$HOME/.nix-profile/etc/profile.d/nix.sh"
-fi
+# use .zshrc.local for settings specific to one system
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

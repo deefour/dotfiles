@@ -1,21 +1,19 @@
 #!/usr/bin/env bash
 
 # install homebrew
-if [ -z "$(which brew | grep 'not found')" ]
-then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if ! type brew &>/dev/null; then
+  if [[ $(uname -s) == Darwin ]]; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  else
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+  fi
 fi
 
 install() {
   brew info "$1" | grep --quiet 'Not installed' && brew install "$@"
 }
 
-cask-install() {
-  brew cask info "$1" | grep --quiet 'Not installed' && brew cask install "$@"
-}
-
 brew update
-
 brew upgrade
 
 # shell stuff
@@ -23,6 +21,7 @@ install autojump
 
 # dev tools
 install git
+install gcc
 install zsh
 install yarn
 install htop
@@ -42,7 +41,6 @@ install coreutils
 
 
 install dust
-install bb
 install restic
 install tig
 install fd
@@ -74,8 +72,4 @@ install ffmpeg
 install gd
 install imagemagick
 install pandoc
-
-cask-install google-chrome
-cask-install insomnia
-
 brew cleanup
