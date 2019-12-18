@@ -5,6 +5,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 export PATH=$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH
 export PATH=$HOME/.composer/vendor/bin:$PATH
+export PATH=vendor/bin:$PATH
 
 export EDITOR=vim
 export VISUAL=vim
