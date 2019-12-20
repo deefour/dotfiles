@@ -1,5 +1,3 @@
-export DOT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin
 export PATH=$HOME/bin:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH

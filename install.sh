@@ -2,7 +2,7 @@
 
 export DOT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-grep -qF DOT_ROOT ~/.zshenv.local || echo "$DOT_ROOT" >> ~/.zshenv.local
+grep -qF DOT_ROOT ~/.zshenv.local || echo "export DOT_ROOT=\"$DOT_ROOT\"" >> ~/.zshenv.local
 
 pushd $DOT_ROOT
 
