@@ -32,7 +32,7 @@ install bat
 install exa
 install nvm
 install jq
-install gnu-sed --with-default-names
+install gnu-sed
 install findutils
 install diff-so-fancy
 install ansible
@@ -57,7 +57,7 @@ install redis
 
 # for vim
 install ctags
-install vim --with-override-system-vi
+install vim
 
 # languages
 install go

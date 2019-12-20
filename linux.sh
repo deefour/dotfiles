@@ -13,8 +13,7 @@ install () {
 
 install build-essential
 install git
-install ddnsmasq
-install dfs
+install dnsmasq
 install gdebi
 
 # install php
@@ -31,7 +30,7 @@ done
 # turn off apache
 sudo systemctl disable --now apache2
 
-mkdir ~/.composer
+[ ! -d ~/.composer ] && mkdir ~/.composer
 sudo chown "$(whoami).$(whoami)" ~/.composer -R
 
 source brew.sh

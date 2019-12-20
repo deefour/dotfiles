@@ -18,6 +18,8 @@ done
 # silence login messages
 touch ~/.hushlogin
 
+_ANTIGEN_INSTALL_DIR="$DOT_ROOT"
+
 # install antigen
 echo "Installing antigen (zsh bundle manager)"
 curl -L git.io/antigen > antigen.zsh
