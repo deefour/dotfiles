@@ -1,7 +1,0 @@
-set transparency=1
-set background=light
-set guioptions=egmt
-set guifont=Source\ Code\ Pro:h14
-set linespace=5
-
-color playroom

@@ -37,7 +37,6 @@ else
   source linux.sh
 fi
 
-source janus.sh
 source nvm.sh
 source node.sh
 
