@@ -38,7 +38,7 @@ install diff-so-fancy
 install ansible
 install tree
 install coreutils
-
+install vagrant
 
 install dust
 install restic
