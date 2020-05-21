@@ -1,0 +1,25 @@
+lss() {
+  if [ -f "package.json" ]; then
+    output=$(cat package.json | jq -S '."scripts"' | prettyjson | awk '{$1=$1;print}')
+
+    if [ -n "$output" ]; then
+      echo ""
+      echo -e "\e[36mpackage.json\e[0m scripts:"
+      echo ""
+      echo "$output"
+      echo ""
+    fi
+  fi
+
+  if [ -f "Makefile" ]; then
+    output=$(awk -F ":" '/^\w+/ {print $1}' Makefile | awk '{$1=$1;print}')
+
+    if [ -n "$output" ]; then
+      echo ""
+      echo -e "\e[36mMakefile\e[0m targets:"
+      echo ""
+      echo "$output"
+      echo ""
+    fi
+  fi
+}

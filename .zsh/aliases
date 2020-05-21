@@ -19,9 +19,6 @@ alias la="exa -ghla"
 # show ssh hosts from ~/.ssh/config
 alias lssh='cat ~/.ssh/config | grep "Host " | cut -f2 -d\ | grep -v "\*" | sort'
 
-# show package.json scripts
-alias lss='cat package.json | jq -S '."scripts"' | prettyjson'
-
 alias tmux="nocorrect tmux "
 alias t="nocorrect tmux -u"
 
