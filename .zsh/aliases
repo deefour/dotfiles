@@ -32,3 +32,8 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 
 alias s="j "
 alias cat=bat
+
+
+if [[ $OSTYPE != darwin* ]]; then
+  alias pbcopy='xclip -sel clip'
+fi
