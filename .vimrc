@@ -26,3 +26,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 let mapleader = ","
 
 colorscheme molokai
+
+" fix backspace
+set bs=2
