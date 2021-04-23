@@ -29,6 +29,8 @@ install composer
 install tmux
 install ssh-copy-id
 install bat
+install fasd
+install fzf
 install exa
 install nvm
 install jq

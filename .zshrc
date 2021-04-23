@@ -12,3 +12,8 @@ source $DOT_ROOT/.zsh/config
 
 # use .zshrc.local for settings specific to one system
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+
+# Fzf
+[[ -f ~/.fzf.zsh ]] || $(brew --prefix)/opt/fzf/install
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
