@@ -16,36 +16,34 @@ install() {
 brew update
 brew upgrade
 
-# shell stuff
-install autojump
+# shell tools
+install bat
+install dust
+install fasd
+install fd
+install findutils
+install fzf
+install gnu-sed
+install exa
+install htop
+install jq
+install ssh-copy-id
+install tig
+install tmux
+install tree
+install zsh
 
 # dev tools
-install git
-install gcc
-install zsh
-install yarn
-install htop
-install composer
-install tmux
-install ssh-copy-id
-install bat
-install fasd
-install fzf
-install exa
-install nvm
-install jq
-install gnu-sed
-install findutils
-install diff-so-fancy
 install ansible
-install tree
+install composer
 install coreutils
-install vagrant
-
-install dust
+install diff-so-fancy
+install gcc
+install git
+install nvm
 install restic
-install tig
-install fd
+install vagrant
+install yarn
 
 # http tools
 install httpie
@@ -74,4 +72,5 @@ install ffmpeg
 install gd
 install imagemagick
 install pandoc
+
 brew cleanup
