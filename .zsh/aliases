@@ -16,6 +16,9 @@ alias ls="exa"
 alias ll="exa -ghl"
 alias la="exa -ghla"
 
+# Laravel sail
+alias sail='bash vendor/bin/sail'
+
 # show ssh hosts from ~/.ssh/config
 alias lssh='cat ~/.ssh/config | grep "Host " | cut -f2 -d\ | grep -v "\*" | sort'
 
