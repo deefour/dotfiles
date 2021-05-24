@@ -37,7 +37,6 @@ alias cat=bat
 
 alias s="fasd2fzf"
 
-
 if [[ $OSTYPE != darwin* ]]; then
   alias pbcopy='xclip -sel clip'
 fi
