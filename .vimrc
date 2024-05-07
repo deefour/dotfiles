@@ -16,6 +16,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tomasr/molokai'
 
 call plug#end()
 

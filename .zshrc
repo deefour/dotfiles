@@ -7,8 +7,10 @@ setopt interactivecomments
 
 source $DOT_ROOT/.zsh/config
 
-[[ -f ~/$NVM_DIR ]] && source "$NVM_DIR/nvm.sh"
-[[ -f ~/$NVM_DIR ]] && source "$NVM_DIR/bash_completion"
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
 
 # use .zshrc.local for settings specific to one system
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
