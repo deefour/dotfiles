@@ -24,7 +24,7 @@ zmodload zsh/terminfo
 source $DOT_ROOT/antigen.zsh
 
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+# antigen bundle sindresorhus/pure
 antigen bundle common-aliases
 antigen bundle extract
 antigen bundle brew

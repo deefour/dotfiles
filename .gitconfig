@@ -3,33 +3,26 @@
   email = jason@deefour.me
 
 [diff]
+  external = difft
 
 [color]
   ui = auto
 
-[color "diff-highlight"]
-  oldNormal = "red bold"
-  oldHighlight = "red bold 52"
-  newNormal = "green bold"
-  newHighlight = "green bold 22"
-
 [alias]
-  st = status
+  po = push -u origin HEAD
   ci = commit
   co = checkout
   ap = add --all -p
   amend = commit --amend
   aa = add --all
   ff = merge --ff-only
-  b = "git --no-pager branch -vv"
-  ds = diff --stat=160,120
-  dh1 = diff HEAD~1
-  pr = pull --rebase
+  b = "git --no-pager branch -vv --sort=-committerdate"
+  br = "!git b | head"
   git = !exec git
   head = !git l -1
   h = !git head
   r = !git l -30
-  l = "!git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+  l = "!git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 [merge]
   tool = vimdiff
@@ -39,14 +32,21 @@
 	editor = vim
 
 [push]
-	default = matching
+	default = current
 
 [help]
 	autocorrect = 1
 
-[pager]
-  diff = "diff-so-fancy | less --tabs=4 -RFX"
-  show = "diff-so-fancy | less --tabs=4 -RFX"
-
 [fetch]
 prune = true
+
+[difftool]
+  prompt = false
+
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+  difftool = true
+[pull]
+	rebase = true

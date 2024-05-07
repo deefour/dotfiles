@@ -8,7 +8,7 @@ export PATH=vendor/bin:$PATH
 export EDITOR=vim
 export VISUAL=vim
 
-export PURE_PROMPT_SYMBOL="🠊 "
+#export PURE_PROMPT_SYMBOL="→ "
 
 export ANSIBLE_NOCOWS=1
 export BAT_THEME="Monokai Extended Bright"
@@ -16,3 +16,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # use .zshenv.local for settings specific to one system
 [[ -f ~/.zshenv.local ]] && source ~/.zshenv.local
+
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -3,15 +3,17 @@
 # install homebrew
 if ! type brew &>/dev/null; then
   if [[ $(uname -s) == Darwin ]]; then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   else
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
   fi
 fi
 
 install() {
-  brew info "$1" | grep --quiet 'Not installed' && brew install "$@"
+  brew list "$1" &>/dev/null || brew install "$@"
 }
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 brew update
 brew upgrade
@@ -36,8 +38,10 @@ install zsh
 # dev tools
 install ansible
 install composer
+install docker
+install docker-compose
 install coreutils
-install diff-so-fancy
+install difftastic
 install gcc
 install git
 install nvm
