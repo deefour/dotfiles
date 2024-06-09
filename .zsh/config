@@ -20,23 +20,19 @@ setopt HIST_REDUCE_BLANKS
 # bind keys for history search
 zmodload zsh/terminfo
 
-# antigen
-source $DOT_ROOT/antigen.zsh
+# antidote
+source $DOT_ROOT/.antidote/antidote.zsh
+source <(antidote init)
 
-antigen bundle mafredri/zsh-async
-# antigen bundle sindresorhus/pure
-antigen bundle common-aliases
-antigen bundle extract
-antigen bundle brew
-antigen bundle tmux
-antigen bundle httpie
-antigen bundle command-not-found
-antigen bundle zdharma/history-search-multi-word
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zdharma/zsh-diff-so-fancy
-antigen bundle zdharma/fast-syntax-highlighting
-
-antigen apply
+antidote bundle <<EOBUNDLES
+    mafredri/zsh-async
+    sindresorhus/pure
+    zsh-users/zsh-history-substring-search kind:defer
+    zsh-users/zsh-autosuggestions kind:defer
+    zsh-users/zsh-completions
+    zdharma-continuum/zsh-diff-so-fancy
+    zdharma-continuum/fast-syntax-highlighting kind:defer
+EOBUNDLES
 
 # Automatically list directory contents on `cd`.
 auto-ls () {

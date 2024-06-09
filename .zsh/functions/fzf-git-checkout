@@ -4,6 +4,7 @@ fzf-git-checkout() {
     local branch
 
     branch=$(fzf-git-branch)
+
     if [[ "$branch" = "" ]]; then
         echo "No branch selected."
         return

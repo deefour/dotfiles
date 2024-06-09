@@ -89,6 +89,7 @@ tmtags
 *.cache
 .idea/
 .vscode/
+*.zwc
 
 # Mac OS
 # ----------------------------------------
