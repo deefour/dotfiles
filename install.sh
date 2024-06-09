@@ -18,11 +18,10 @@ done
 # silence login messages
 touch ~/.hushlogin
 
-_ANTIGEN_INSTALL_DIR="$DOT_ROOT"
-
-# install antigen
-echo "Installing antigen (zsh bundle manager)"
-curl -L git.io/antigen > antigen.zsh
+# install antidote
+echo "Installing antidote (zsh bundle manager)"
+[[ -e ${DOT_ROOT:-~}/.antidote ]] ||
+  git clone https://github.com/mattmc3/antidote.git ${DOT_ROOT:-~}/.antidote
 
 echo "Installing NVM"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash

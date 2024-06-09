@@ -26,7 +26,7 @@ install fd
 install findutils
 install fzf
 install gnu-sed
-install exa
+install eza
 install htop
 install jq
 install ssh-copy-id
@@ -46,7 +46,6 @@ install gcc
 install git
 install nvm
 install restic
-install vagrant
 install yarn
 
 # http tools

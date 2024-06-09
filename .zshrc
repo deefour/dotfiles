@@ -15,9 +15,9 @@ source $DOT_ROOT/.zsh/config
 # use .zshrc.local for settings specific to one system
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
-# Fasd
+# fasd
 eval "$(fasd --init zsh-hook)"
 
-# Fzf
+# fzf
 [[ -f ~/.fzf.zsh ]] || $(brew --prefix)/opt/fzf/install
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

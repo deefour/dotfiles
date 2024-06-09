@@ -12,9 +12,9 @@ alias cp='cp -v'
 alias vi=vim
 
 # ls
-alias ls="exa"
-alias ll="exa -ghl"
-alias la="exa -ghla"
+alias ls="eza"
+alias ll="eza -ghl"
+alias la="eza -ghla"
 
 # Laravel sail
 alias sail='bash vendor/bin/sail'
@@ -30,8 +30,8 @@ alias reload!=". ~/.zshrc"
 alias flushdns="sudo killall -HUP mDNSResponder"
 
 alias gst="git status "
-alias gb='fzf-git-branch'
 alias gco='fzf-git-checkout'
+alias gmg='fzf-git-merge'
 alias gp='git pull origin HEAD'
 alias push='git push'
 alias gpd='git pull origin develop'
@@ -46,3 +46,6 @@ alias s="fasd2fzf"
 if [[ $OSTYPE != darwin* ]]; then
   alias pbcopy='xclip -sel clip'
 fi
+
+alias wip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"'
+alias resume='git rev-list --max-count=1 --format="%s" HEAD | grep -q "--wip--" && git reset HEAD~1'
